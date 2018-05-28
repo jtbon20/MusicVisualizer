@@ -1,0 +1,9 @@
+{
+  "name": "musicvisualizer",
+  "version": "1.0.0",
+  "main": "sketch.js",
+  "repository": "https://github.com/jtbon20/MusicVisualizer.git",
+  "author": "Taggart Bonham <taggartbonham@yahoo.com>",
+  "license": "MIT",
+  "scripts": { "start": "node sketch.js" }
+}
