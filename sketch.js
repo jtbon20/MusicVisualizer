@@ -34,6 +34,8 @@ function draw() {
       rotateZ(frameCount * 0.002);
       push();
       sphere(10);
+      var color = map(spectrum[i], 0, 255, 255, 0);
+      fill(color);
       pop();
     }
     pop();
