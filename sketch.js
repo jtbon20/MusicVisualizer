@@ -29,13 +29,16 @@ function draw() {
   for(var j = 0; j < 5; j++){
     push();
     for(var i = 0; i < 80; i++){
-      var thisLevel = map(spectrum[i], 0, 255, 0, .001);
-      translate(sin(frameCount * thisLevel + j) * 10, sin(frameCount *thisLevel + j) * 100, i * 0.1);
-      rotateZ(frameCount * 0.002);
+      var thisLevel = map(spectrum[i], 0, 255, -1, 1);
+    translate(sin(frameCount * 0.001 + j + thisLevel) * 100, sin(frameCount * 0.001 + j) * 100, i * 0.1);
+      rotateZ(frameCount * .002 + thisLevel);
       push();
-      sphere(10);
-      var color = map(spectrum[i], 0, 255, 255, 0);
-      fill(color);
+      sphere(map(spectrum[i], 0, 255, 2, 5));
+      //var color = map(spectrum[i], 0, 255, 255, 0);
+      //var opacity = map(mic.getLevel(), 0, 1, 0, 255);
+      // console.log(mic.getLevel());
+      var opacity = map(spectrum[i], 0, 255, .1, 1)
+      fill(map(spectrum[i], 0, 255, 250, 3))
       pop();
     }
     pop();
