@@ -21,6 +21,7 @@ function setup() {
 }
 
 function draw() {
+  background(250);
   // returns an array with [binCount] amplitude readings from lowest to highest frequencies
   const spectrum = fft.analyze(binCount);
     // background(map(spectrum[0], 0, 255, 240, 0));
