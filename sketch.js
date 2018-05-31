@@ -33,7 +33,7 @@ function draw() {
     translate(sin(frameCount * 0.0001 + j + thisLevel) * 100, sin(frameCount * 0.0001 + j + thisLevel) * 100, i * 0.1);
       rotateZ(frameCount * .002 + thisLevel);
       push();
-      sphere(map(spectrum[i], 0, 255, 2, 5));
+      sphere(map(spectrum[i], 0, 255, 2, 10));
       //var color = map(spectrum[i], 0, 255, 255, 0);
       //var opacity = map(mic.getLevel(), 0, 1, 0, 255);
       // console.log(mic.getLevel());
