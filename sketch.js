@@ -21,9 +21,9 @@ function setup() {
 }
 
 function draw() {
-  background(250);
   // returns an array with [binCount] amplitude readings from lowest to highest frequencies
   const spectrum = fft.analyze(binCount);
+  background(spectrum[0],spectrum[0],spectrum[0]);
     // background(map(spectrum[0], 0, 255, 240, 0));
 
   for(var j = 0; j < 5; j++){
@@ -33,7 +33,7 @@ function draw() {
     translate(sin(frameCount * 0.0001 + j + thisLevel) * 100, sin(frameCount * 0.0001 + j + thisLevel) * 100, i * 0.1);
       rotateZ(frameCount * .002 + thisLevel);
       push();
-      sphere(map(spectrum[i], 0, 255, 2, 10));
+      sphere(map(spectrum[i], 0, 255, 2, 5));
       //var color = map(spectrum[i], 0, 255, 255, 0);
       //var opacity = map(mic.getLevel(), 0, 1, 0, 255);
       // console.log(mic.getLevel());
