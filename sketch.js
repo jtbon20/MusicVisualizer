@@ -7,10 +7,9 @@
 let mic, soundFile, fft;
 const smoothing = 0.93;
 const binCount = 256;
-const particles = new Array(binCount);
 
 function setup() {
-  c = createCanvas(windowWidth, windowHeight, WEBGL);
+  createCanvas(windowWidth, windowHeight, WEBGL);
   noStroke();
 
   // Create an Audio input
@@ -42,7 +41,6 @@ function draw() {
       // var opacity = map(mic.getLevel(), 0, 1, 0, 255);
       // console.log(mic.getLevel());
 
-      const c = color(255, 0, 0);
       const opacity = map(spectrum[0], 0, 255, 0.2, 1);
       pop();
       fill(`rgba(${0},${spectrum[2 * i]},${255 - spectrum[2 * i]},${opacity})`);
